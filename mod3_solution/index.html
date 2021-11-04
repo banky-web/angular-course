@@ -1,92 +1,31 @@
-<!--check this-->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Narrow Down Your Menu Choice</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/styles.css" />
-</head>
-
-<body data-ng-app="NarrowItDown">
-    <div class="container" data-ng-controller="NarrowItDownCtrl as ctrl">
-        <h1>Narrow Down Your Chinese Menu Choice</h1>
-        <div>
-            <p>
-                <span data-ng-hide="ctrl.found">
-            Type search term and press the button!
-          </span>
-                <span data-ng-show="ctrl.found">Items: <span class="badge">{{ctrl.found.length}}</span></span>
-                <span class="label label-danger" data-ng-if="ctrl.found.length==0">Nothing found</span
-          >
-        </p>
-      </div>
-      <div class="form-group">
-        <input
-          type="text"
-          placeholder="search for dish name"
-          class="form-control"
-          data-ng-model="ctrl.searchTerm"
-        />
-
-        <button
-          class="btn btn-primary"
-          data-ng-click="ctrl.getMatchedMenuItems()"
-        >
-          Narrow It Down For Me!
-        </button>
-      </div>
-
-      <p class="row"></p>
-      <!-- found-items should be implemented as a component -->
-      <!-- on-remove="...."-->
-      <found-items
-        menu-items="ctrl.found"
-        on-remove="ctrl.removeItem(id)"
-        class="row"
-      ></found-items>
-    </div>
-
-    <!-- ANGULAR JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <!-- APP -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <script src="angular.min.js"></script>
-    <script src="app.js"></script>
-  </body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Narrow Down Your Menu Choice</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
-</head>
-
+    <script src="app.js"></script>    
+  </head>
 <body ng-app="NarrowItDownApp">
-    <div class="container" ng-controller="NarrowItDownController as narrowItDown">
-        <div class="row">
-            <h1>Narrow Down Your Chinese Menu Choice</h1>
+   <div class="container" ng-controller="NarrowItDownController as narrowItDown">
+      <div class="row">
+     
+        <h1>Narrow Down Your Chinese Menu Choice</h1>
 
-            <div class="form-group">
-                <input type="text" ng-model="narowItDown.searchTerm" placeholder="search term" class="form-control" />
-            </div>
-            <div class="form-group narrow-button">
-                <button ng-click="narowItDown.search();" class="btn btn-primary">
-            Narrow It Down For Me!
-          </button>
-            </div>
+        <div class="form-group">
+          <input type="text" ng-model="narrowItDown.searchTerm" placeholder="search term" class="form-control">
+        </div>
+        <div class="form-group narrow-button">
+          <button ng-click="narrowItDown.search();" class="btn btn-primary">Narrow It Down For Me!</button>
         </div>
 
-        
-        <found-items items="narrowItDown.found" on-remove="narrowItDown.removeItem(index)" is-valid="narrowItDown.valid"></found-items>
-    </div>
-</body>
+      </div>
 
-</html> -->
+    <found-items items="narrowItDown.found" on-remove="narrowItDown.removeItem(index)" is-valid="narrowItDown.valid"></found-items>
+
+  </div>
+
+</body>
+</html>
